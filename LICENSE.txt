@@ -1,0 +1,60 @@
+LICENCIA DE USO DE KEYCAP STUDIO
+Copyright (c) 2026 Noscript (GitHub: noscriptph) - paillacarelectricidad@gmail.com
+
+Resumen en inglés (English summary): Keycap Studio is free to use. You may NOT
+redistribute it to third parties, NOT modify it without the author's permission, and
+NOT use the 3D models it generates for any monetary or commercial purpose. Custom
+changes and new features can be requested from the author and have a cost.
+Contact: paillacarelectricidad@gmail.com
+
+Este texto es la licencia completa; en caso de duda prevalece la versión en español.
+
+1. DEFINICIONES
+   «Programa»: Keycap Studio, su código fuente, interfaz, documentación y recursos propios.
+   «Modelos generados»: archivos 3D (STL, 3MF, STEP, OBJ u otros) creados, reparados o
+   exportados con el Programa, incluidos los generados por el generador paramétrico.
+   «Autor»: Noscript.
+
+2. USO GRATUITO
+   Se concede a cualquier persona un permiso personal, no exclusivo e intransferible para
+   usar el Programa sin costo, en su navegador o en su equipo.
+
+3. PROHIBICIONES
+   a) DISTRIBUCIÓN A TERCEROS: queda prohibido copiar, publicar, alojar, vender, sublicenciar
+      o distribuir el Programa, total o parcialmente, a terceros, por cualquier medio.
+   b) MODIFICACIÓN: queda prohibido modificar, adaptar, descompilar, extraer o crear obras
+      derivadas del Programa sin permiso previo y por escrito del Autor.
+   c) USO MONETARIO DE LOS MODELOS GENERADOS: queda prohibido vender, alquilar, licenciar o
+      usar de cualquier otra forma lucrativa o comercial los Modelos generados, ya sea el
+      archivo digital o las piezas impresas a partir de él.
+   d) Quitar o alterar los avisos de autoría, licencia o la marca interior que el Programa
+      graba en las piezas.
+
+4. MODIFICACIONES Y FUNCIONES NUEVAS BAJO PEDIDO
+   Las modificaciones del Programa y las funciones adicionales pueden solicitarse al Autor.
+   Estas solicitudes TIENEN COSTO. Contacto: paillacarelectricidad@gmail.com
+
+5. COMPONENTES DE TERCEROS
+   El Programa incluye o carga componentes de terceros (modelos Cherry MX, three.js,
+   qrcode-generator, occt-import-js / OpenCascade, fuentes bajo SIL OFL, entre otros). Cada
+   uno conserva su propia licencia, que no se ve alterada por este documento. Ver
+   THIRD_PARTY_LICENSES.txt.
+
+6. MARCAS
+   Cherry MX, SA, DSA, XDA, OEM y otros nombres de perfiles o fabricantes son marcas o
+   nombres de sus respectivos dueños. Se usan solo de forma descriptiva (compatibilidad o
+   referencia aproximada). El Programa no está afiliado, patrocinado ni respaldado por
+   ellos. Los perfiles generados son aproximaciones, no réplicas de los productos comerciales.
+
+7. CONTENIDO DEL USUARIO
+   Quien usa el Programa es responsable de tener los derechos sobre las imágenes, textos y
+   logotipos que grabe en sus piezas.
+
+8. SIN GARANTÍA
+   EL PROGRAMA SE ENTREGA «TAL CUAL», SIN GARANTÍA DE NINGÚN TIPO, EXPRESA O IMPLÍCITA,
+   INCLUIDA LA IDONEIDAD PARA UN FIN DETERMINADO Y LA CALIDAD DE IMPRESIÓN. EL AUTOR NO
+   RESPONDE POR DAÑOS DERIVADOS DEL USO DEL PROGRAMA O DE LAS PIEZAS IMPRESAS.
+
+9. TERMINACIÓN
+   El incumplimiento de esta licencia la termina automáticamente. Los derechos no concedidos
+   expresamente quedan reservados por el Autor.

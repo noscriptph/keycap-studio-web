@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
+  <rect width="512" height="512" rx="112" fill="#1f231d"/>
+  <g transform="translate(256 262)">
+    <path d="M-150 70 L-110 -86 Q-104 -108 -82 -108 H82 Q104 -108 110 -86 L150 70 Q154 98 126 98 H-126 Q-154 98 -150 70 Z" fill="#c9ec55"/>
+    <path d="M-104 36 L-78 -62 Q-74 -76 -60 -76 H60 Q74 -76 78 -62 L104 36 Q106 52 90 52 H-90 Q-106 52 -104 36 Z" fill="#e6f7a8"/>
+    <text x="0" y="22" text-anchor="middle" font-family="system-ui,Segoe UI,Arial,sans-serif" font-size="92" font-weight="800" fill="#1f231d">K</text>
+  </g>
+</svg>

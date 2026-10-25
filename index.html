@@ -1,0 +1,207 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+    <meta name="theme-color" content="#f4f5f1" />
+    <meta name="description" content="Personaliza keycaps: imagen o texto como relieve o grabado sobre modelos 3D y exporta STL, 3MF, STEP, OBJ y más." />
+    <link rel="manifest" href="./manifest.webmanifest" />
+    <link rel="icon" href="./icon.svg" type="image/svg+xml" />
+    <title>Keycap Studio</title>
+    <script type="module" crossorigin src="./assets/index-DsOXxm1-.js"></script>
+    <link rel="modulepreload" crossorigin href="./assets/three-Dcbj-bkz.js">
+    <link rel="stylesheet" crossorigin href="./assets/index-CKR_vfJz.css">
+  </head>
+  <body>
+    <div id="app" data-view="model">
+      <header class="topbar">
+        <button class="icon-btn" id="btn-library-toggle" type="button" data-i18n-aria="nav.library" aria-label="Biblioteca">☰</button>
+        <a class="brand" href="./" aria-label="Keycap Studio">
+          <span class="brand-mark" aria-hidden="true">K</span>
+          <span class="brand-name">keycap<span>studio</span></span>
+        </a>
+        <div class="crumb" id="crumb" aria-live="polite"></div>
+        <div class="topbar-actions">
+          <button class="icon-btn" id="btn-undo" type="button" disabled data-i18n-title="action.undoStep" title="Deshacer (Ctrl+Z)" data-i18n-aria="action.undoStep" aria-label="Deshacer">↶</button>
+          <button class="icon-btn" id="btn-redo" type="button" disabled data-i18n-title="action.redoStep" title="Rehacer (Ctrl+Y)" data-i18n-aria="action.redoStep" aria-label="Rehacer">↷</button>
+          <button class="btn" id="btn-board" type="button" hidden data-i18n="board.topbar" data-i18n-title="board.open" title="Ver el teclado en 3D">Teclado</button>
+          <button class="btn" id="btn-save" type="button" disabled><span data-i18n="action.save">Guardar</span></button>
+          <button class="btn primary" id="btn-export" type="button"><span data-i18n="action.export">Exportar</span></button>
+          <button class="icon-btn" id="btn-about" type="button" data-i18n-title="about.title" data-i18n-aria="about.title" title="Acerca de" aria-label="Acerca de">ⓘ</button>
+          <button class="icon-btn" id="btn-settings" type="button" data-i18n-aria="settings.title" aria-label="Ajustes">⚙</button>
+        </div>
+      </header>
+
+      <div class="workspace">
+        <aside class="panel library" id="panel-library" aria-label="Biblioteca">
+          <div class="panel-head">
+            <div>
+              <p class="eyebrow" data-i18n="lib.eyebrow">TU BIBLIOTECA</p>
+              <h1 data-i18n="lib.title">Modelos</h1>
+            </div>
+            <span class="count" id="model-count">0</span>
+            <button class="btn small primary" id="btn-import" type="button"><span data-i18n="action.import">Importar</span></button>
+            <button class="btn small" id="btn-board-open" type="button" data-i18n="board.library" data-i18n-title="board.open" title="Ver el teclado en 3D">Teclado 3D</button>
+            <button class="btn small" id="btn-batch" type="button" data-i18n="batch.open" title="Producción en lote">Lote</button>
+          </div>
+          <div class="filter-row">
+            <select id="lib-filter" class="mini-select" data-i18n-aria="lib.filter" aria-label="Filtro">
+              <option value="all" data-i18n="lib.filter.all">Todos</option>
+              <option value="fav" data-i18n="lib.filter.fav">Favoritos</option>
+              <option value="repaired" data-i18n="lib.filter.repaired">Reparados</option>
+              <option value="problems" data-i18n="lib.filter.problems">Con problemas</option>
+            </select>
+            <select id="lib-sort" class="mini-select" data-i18n-aria="lib.sort" aria-label="Orden">
+              <option value="name" data-i18n="lib.sort.name">Nombre</option>
+              <option value="width" data-i18n="lib.sort.width">Ancho</option>
+              <option value="recent" data-i18n="lib.sort.recent">Recientes</option>
+            </select>
+          </div>
+          <label class="search">
+            <span aria-hidden="true">⌕</span>
+            <input id="lib-search" type="search" data-i18n-placeholder="lib.search" placeholder="Buscar modelos y diseños" autocomplete="off" />
+          </label>
+          <div class="scroll">
+            <div id="lib-models"></div>
+            <div class="section-head">
+              <div>
+                <p class="eyebrow" data-i18n="lib.projectEyebrow">TUS DISEÑOS</p>
+                <h2 data-i18n="lib.designs">Diseños guardados</h2>
+              </div>
+              <span class="count" id="design-count">0</span>
+              <button class="icon-btn small" id="btn-new-folder" type="button" data-i18n-title="folder.new" title="Nueva carpeta" data-i18n-aria="folder.new" aria-label="Nueva carpeta">📁＋</button>
+            </div>
+            <div id="lib-designs"></div>
+          </div>
+          <p class="panel-foot" data-i18n="lib.foot">Los modelos originales nunca se modifican: cada diseño se guarda aparte.</p>
+        </aside>
+        <div class="scrim" id="scrim"></div>
+
+        <main class="stage"><div class="stage-grid">
+          <section class="card" id="card-3d" aria-label="Vista 3D">
+            <header class="card-head">
+              <h2><span class="dot"></span><span data-i18n="view3d.title">VISTA 3D</span></h2>
+              <div class="tools">
+                <div class="segmented compact" role="group" data-i18n-aria="view3d.views" aria-label="Vistas">
+                  <button type="button" data-view3d="iso" data-i18n="view.iso">Iso</button>
+                  <button type="button" data-view3d="top" data-i18n="view.top">Superior</button>
+                  <button type="button" data-view3d="bottom" data-i18n="view.bottom">Inferior</button>
+                  <button type="button" data-view3d="front" data-i18n="view.front">Frente</button>
+                  <button type="button" data-view3d="side" data-i18n="view.side">Lado</button>
+                </div>
+                <select id="select-material" class="mini-select" data-i18n-aria="view3d.material" aria-label="Material">
+                  <option value="gray" data-i18n="material.gray">Resina gris</option>
+                  <option value="white" data-i18n="material.white">Blanca</option>
+                  <option value="clear" data-i18n="material.clear">Transparente</option>
+                  <option value="dark" data-i18n="material.dark">Oscura</option>
+                </select>
+                <button class="icon-btn small" id="btn-compare" type="button" aria-pressed="false" data-i18n-title="view3d.compare" title="Ver el modelo original" data-i18n-aria="view3d.compare" aria-label="Ver el modelo original">⇄</button>
+                <button class="icon-btn small" id="btn-section" type="button" aria-pressed="false" data-i18n-title="view3d.section" title="Corte horizontal" data-i18n-aria="view3d.section" aria-label="Corte horizontal">✂</button>
+                <button class="icon-btn small" id="btn-turn" type="button" data-i18n-title="orient.turn" title="Girar 90°" data-i18n-aria="orient.turn" aria-label="Girar 90°">↻</button>
+                <button class="icon-btn small" id="btn-flip" type="button" data-i18n-title="orient.flip" title="Voltear arriba/abajo" data-i18n-aria="orient.flip" aria-label="Voltear arriba/abajo">⇅</button>
+                <button class="icon-btn small" id="btn-auto-orient" type="button" data-i18n-title="orient.auto" title="Orientación automática" data-i18n-aria="orient.auto" aria-label="Orientación automática">✦</button>
+              </div>
+            </header>
+            <div class="canvas-wrap">
+              <canvas id="view3d-canvas" data-i18n-aria="view3d.canvas" aria-label="Modelo 3D"></canvas>
+              <div class="placeholder" id="placeholder-3d">
+                <div class="placeholder-key" aria-hidden="true">⌨</div>
+                <strong data-i18n="hint.chooseModel">Elige un modelo de la biblioteca</strong>
+                <button class="btn small" id="btn-open-library" type="button" data-i18n="nav.library">Biblioteca</button>
+              </div>
+              <div class="chip base-chip" id="base-chip" hidden><span aria-hidden="true">▼</span> <span data-i18n="view3d.base">Base · acople al switch</span></div>
+            </div>
+            <div class="section-bar" id="section-bar" hidden><span data-i18n="view3d.sectionHeight">Altura del corte</span><input id="section-slider" type="range" min="0" max="1" step="0.005" value="1" data-i18n-aria="view3d.section" aria-label="Altura del corte" /></div>
+            <footer class="card-foot"><span data-i18n="view3d.hint">Arrastra para girar · toca una cara para elegirla</span></footer>
+          </section>
+
+          <section class="card" id="card-2d" aria-label="Superficie 2D">
+            <header class="card-head">
+              <h2><span class="dot accent"></span><span data-i18n="view2d.title">SUPERFICIE 2D</span></h2>
+              <div class="tools">
+                <button class="icon-btn small" id="btn-measure" type="button" aria-pressed="false" data-i18n-title="measure.tool" title="Regla" data-i18n-aria="measure.tool" aria-label="Regla">📏</button>
+                <button class="icon-btn small on" id="btn-critical" type="button" aria-pressed="true" data-i18n-title="print.showCritical" title="Mostrar zonas críticas" data-i18n-aria="print.showCritical" aria-label="Mostrar zonas críticas">⚠</button>
+                <button class="icon-btn small" id="btn-rot-left" type="button" data-i18n-title="rot.left" title="Girar lienzo a la izquierda" data-i18n-aria="rot.left" aria-label="Girar lienzo a la izquierda">⟲</button>
+                <button class="icon-btn small" id="btn-rot-right" type="button" data-i18n-title="rot.right" title="Girar lienzo a la derecha" data-i18n-aria="rot.right" aria-label="Girar lienzo a la derecha">⟳</button>
+                <button class="icon-btn small" id="btn-rot-reset" type="button" data-i18n-title="rot.reset" title="Restablecer giro del lienzo" data-i18n-aria="rot.reset" aria-label="Restablecer giro del lienzo">0°</button>
+                <button class="icon-btn small" id="btn-zoom-out" type="button" data-i18n-aria="zoom.out" aria-label="Alejar">−</button>
+                <button class="icon-btn small" id="btn-zoom-fit" type="button" data-i18n-aria="zoom.fit" data-i18n-title="zoom.fit" title="Ajustar" aria-label="Ajustar">⤢</button>
+                <button class="icon-btn small" id="btn-zoom-in" type="button" data-i18n-aria="zoom.in" aria-label="Acercar">＋</button>
+              </div>
+            </header>
+            <div class="face-bar" id="face-bar" hidden></div>
+            <div class="toolbar" id="toolbar" role="toolbar" data-i18n-aria="toolbar.label" aria-label="Herramientas de edición"></div>
+            <div class="canvas-wrap surface">
+              <canvas id="surface-canvas" tabindex="0" data-i18n-aria="view2d.canvas" aria-label="Plano de la superficie"></canvas>
+              <div class="placeholder" id="placeholder-2d">
+                <strong data-i18n="view2d.empty">Elige una cara en el modelo 3D</strong>
+                <span data-i18n="view2d.emptyHint">La superficie se mostrará aquí, plana y con cotas.</span>
+              </div>
+            </div>
+            <div class="quickbar" id="quickbar" hidden></div>
+            <footer class="card-foot"><span data-i18n="view2d.hint">Arrastra el diseño · esquinas: tamaño · círculo: giro · rueda: zoom · Mayús+rueda o dos dedos: girar el lienzo</span></footer>
+          </section>
+        </div></main>
+
+        <aside class="panel inspector" id="panel-inspector" aria-label="Edición">
+          <div class="panel-head">
+            <div>
+              <p class="eyebrow" data-i18n="insp.eyebrow">PANEL DE EDICIÓN</p>
+              <h1 data-i18n="insp.title">Tu diseño</h1>
+            </div>
+          </div>
+          <div class="scroll">
+            <details class="panel-section" open>
+              <summary><span class="chevron" aria-hidden="true">▾</span><span data-i18n="insp.surface">Superficie</span></summary>
+              <div class="section-body">
+                <div id="surface-info"></div>
+                <button class="btn small" id="btn-reset-surface" type="button" data-i18n="surface.reset">Elegir la parte superior</button>
+              </div>
+            </details>
+            <details class="panel-section" open>
+              <summary><span class="chevron" aria-hidden="true">▾</span><span data-i18n="insp.layers">Capas del diseño</span></summary>
+              <div class="section-body">
+                <div class="button-row">
+                  <button class="btn primary" id="btn-add-image" type="button" disabled><span aria-hidden="true">＋</span> <span data-i18n="action.insertDesign">Insertar diseño</span></button>
+                  <button class="btn" id="btn-add-text" type="button" disabled><span aria-hidden="true">T</span> <span data-i18n="action.addText">Texto</span></button>
+                  <button class="btn" id="btn-templates" type="button" disabled data-i18n="template.menu">Plantillas ▾</button>
+                </div>
+                <ul class="layers" id="layer-list"></ul>
+                <button class="text-btn" id="btn-clear-layers" type="button" disabled data-i18n="layer.clearAll">Quitar todas las capas</button>
+              </div>
+            </details>
+            <details class="panel-section" open>
+              <summary><span class="chevron" aria-hidden="true">▾</span><span data-i18n="insp.layer">Capa seleccionada</span></summary>
+              <div class="section-body" id="layer-controls"></div>
+            </details>
+            <details class="panel-section" open>
+              <summary><span class="chevron" aria-hidden="true">▾</span><span data-i18n="print.title">Imprimibilidad</span></summary>
+              <div class="section-body" id="print-info"></div>
+            </details>
+            <details class="panel-section">
+              <summary><span class="chevron" aria-hidden="true">▾</span><span data-i18n="insp.mesh">Calidad de la malla</span></summary>
+              <div class="section-body">
+                <div id="quality-info"></div>
+              </div>
+            </details>
+          </div>
+          <div class="panel-foot build" id="build-status" role="status"></div>
+        </aside>
+      </div>
+
+      <nav class="tabbar" aria-label="Secciones">
+        <button type="button" data-tab="library"><span aria-hidden="true">☰</span><span data-i18n="nav.library">Biblioteca</span></button>
+        <button type="button" data-tab="model" class="on"><span aria-hidden="true">⬡</span><span data-i18n="nav.model">Modelo</span></button>
+        <button type="button" data-tab="surface"><span aria-hidden="true">▦</span><span data-i18n="nav.surface">Superficie</span></button>
+        <button type="button" data-tab="layers"><span aria-hidden="true">◧</span><span data-i18n="nav.layers">Capas</span></button>
+      </nav>
+
+      <input id="file-models" type="file" multiple hidden />
+      <input id="file-image" type="file" accept="image/*,.svg,.bmp,.ico,.avif,.gif,.webp,.png,.jpg,.jpeg" multiple hidden />
+      <div id="toast" role="status" aria-live="polite"></div>
+      <div id="sr-live" class="sr-only" role="status" aria-live="polite"></div>
+      <div class="drop-overlay" id="drop-overlay" hidden><div><strong data-i18n="drop.title">Suelta los archivos</strong><span data-i18n="drop.hint">Modelos 3D (STL, OBJ, 3MF, STEP…) o imágenes para el diseño</span></div></div>
+      <noscript><p style="padding:2rem">Keycap Studio necesita JavaScript.</p></noscript>
+    </div>
+  </body>
+</html>

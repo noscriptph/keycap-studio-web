@@ -1,0 +1,297 @@
+{
+  "id": "cherry-mx",
+  "title": "Cherry MX",
+  "license": "MIT",
+  "licenseFile": "LICENSE",
+  "source": "https://github.com/ConstantinoSchillebeeckx/cherry-mx-keycaps",
+  "models": [
+    {
+      "id": "builtin:cherry-mx/1x1 R1",
+      "name": "1x1 R1",
+      "file": "1x1 R1.stl",
+      "width": 1,
+      "row": "R1",
+      "bytes": 169984
+    },
+    {
+      "id": "builtin:cherry-mx/1x1.25 R1",
+      "name": "1x1.25 R1",
+      "file": "1x1.25 R1.stl",
+      "width": 1.25,
+      "row": "R1",
+      "bytes": 181384
+    },
+    {
+      "id": "builtin:cherry-mx/1x1.5 R1",
+      "name": "1x1.5 R1",
+      "file": "1x1.5 R1.stl",
+      "width": 1.5,
+      "row": "R1",
+      "bytes": 172684
+    },
+    {
+      "id": "builtin:cherry-mx/1x1.75 R1",
+      "name": "1x1.75 R1",
+      "file": "1x1.75 R1.stl",
+      "width": 1.75,
+      "row": "R1",
+      "bytes": 152784
+    },
+    {
+      "id": "builtin:cherry-mx/1x2 R1",
+      "name": "1x2 R1",
+      "file": "1x2 R1.stl",
+      "width": 2,
+      "row": "R1",
+      "bytes": 177684
+    },
+    {
+      "id": "builtin:cherry-mx/1x2.25 R1",
+      "name": "1x2.25 R1",
+      "file": "1x2.25 R1.stl",
+      "width": 2.25,
+      "row": "R1",
+      "bytes": 175084
+    },
+    {
+      "id": "builtin:cherry-mx/1x2.5 R1",
+      "name": "1x2.5 R1",
+      "file": "1x2.5 R1.stl",
+      "width": 2.5,
+      "row": "R1",
+      "bytes": 182584
+    },
+    {
+      "id": "builtin:cherry-mx/1x2.75 R1",
+      "name": "1x2.75 R1",
+      "file": "1x2.75 R1.stl",
+      "width": 2.75,
+      "row": "R1",
+      "bytes": 186284
+    },
+    {
+      "id": "builtin:cherry-mx/1x6.25 R1",
+      "name": "1x6.25 R1",
+      "file": "1x6.25 R1.stl",
+      "width": 6.25,
+      "row": "R1",
+      "bytes": 234784
+    },
+    {
+      "id": "builtin:cherry-mx/1x1 R2",
+      "name": "1x1 R2",
+      "file": "1x1 R2.stl",
+      "width": 1,
+      "row": "R2",
+      "bytes": 170184
+    },
+    {
+      "id": "builtin:cherry-mx/1x1.25 R2",
+      "name": "1x1.25 R2",
+      "file": "1x1.25 R2.stl",
+      "width": 1.25,
+      "row": "R2",
+      "bytes": 167484
+    },
+    {
+      "id": "builtin:cherry-mx/1x1.5 R2",
+      "name": "1x1.5 R2",
+      "file": "1x1.5 R2.stl",
+      "width": 1.5,
+      "row": "R2",
+      "bytes": 156184
+    },
+    {
+      "id": "builtin:cherry-mx/1x1.75 R2",
+      "name": "1x1.75 R2",
+      "file": "1x1.75 R2.stl",
+      "width": 1.75,
+      "row": "R2",
+      "bytes": 164984
+    },
+    {
+      "id": "builtin:cherry-mx/1x2 R2",
+      "name": "1x2 R2",
+      "file": "1x2 R2.stl",
+      "width": 2,
+      "row": "R2",
+      "bytes": 192184
+    },
+    {
+      "id": "builtin:cherry-mx/1x2.25 R2",
+      "name": "1x2.25 R2",
+      "file": "1x2.25 R2.stl",
+      "width": 2.25,
+      "row": "R2",
+      "bytes": 193584
+    },
+    {
+      "id": "builtin:cherry-mx/1x2.5 R2",
+      "name": "1x2.5 R2",
+      "file": "1x2.5 R2.stl",
+      "width": 2.5,
+      "row": "R2",
+      "bytes": 194084
+    },
+    {
+      "id": "builtin:cherry-mx/1x2.75 R2",
+      "name": "1x2.75 R2",
+      "file": "1x2.75 R2.stl",
+      "width": 2.75,
+      "row": "R2",
+      "bytes": 209784
+    },
+    {
+      "id": "builtin:cherry-mx/1x6.25 R2",
+      "name": "1x6.25 R2",
+      "file": "1x6.25 R2.stl",
+      "width": 6.25,
+      "row": "R2",
+      "bytes": 227584
+    },
+    {
+      "id": "builtin:cherry-mx/1x1 R3",
+      "name": "1x1 R3",
+      "file": "1x1 R3.stl",
+      "width": 1,
+      "row": "R3",
+      "bytes": 182384
+    },
+    {
+      "id": "builtin:cherry-mx/1x1.25 R3",
+      "name": "1x1.25 R3",
+      "file": "1x1.25 R3.stl",
+      "width": 1.25,
+      "row": "R3",
+      "bytes": 170484
+    },
+    {
+      "id": "builtin:cherry-mx/1x1.5 R3",
+      "name": "1x1.5 R3",
+      "file": "1x1.5 R3.stl",
+      "width": 1.5,
+      "row": "R3",
+      "bytes": 161484
+    },
+    {
+      "id": "builtin:cherry-mx/1x1.75 R3",
+      "name": "1x1.75 R3",
+      "file": "1x1.75 R3.stl",
+      "width": 1.75,
+      "row": "R3",
+      "bytes": 234184
+    },
+    {
+      "id": "builtin:cherry-mx/1x2 R3",
+      "name": "1x2 R3",
+      "file": "1x2 R3.stl",
+      "width": 2,
+      "row": "R3",
+      "bytes": 267984
+    },
+    {
+      "id": "builtin:cherry-mx/1x2.25 R3",
+      "name": "1x2.25 R3",
+      "file": "1x2.25 R3.stl",
+      "width": 2.25,
+      "row": "R3",
+      "bytes": 266784
+    },
+    {
+      "id": "builtin:cherry-mx/1x2.5 R3",
+      "name": "1x2.5 R3",
+      "file": "1x2.5 R3.stl",
+      "width": 2.5,
+      "row": "R3",
+      "bytes": 204784
+    },
+    {
+      "id": "builtin:cherry-mx/1x2.75 R3",
+      "name": "1x2.75 R3",
+      "file": "1x2.75 R3.stl",
+      "width": 2.75,
+      "row": "R3",
+      "bytes": 211684
+    },
+    {
+      "id": "builtin:cherry-mx/1x6.25 R3",
+      "name": "1x6.25 R3",
+      "file": "1x6.25 R3.stl",
+      "width": 6.25,
+      "row": "R3",
+      "bytes": 324584
+    },
+    {
+      "id": "builtin:cherry-mx/1x1 R4",
+      "name": "1x1 R4",
+      "file": "1x1 R4.stl",
+      "width": 1,
+      "row": "R4",
+      "bytes": 178584
+    },
+    {
+      "id": "builtin:cherry-mx/1x1.25 R4",
+      "name": "1x1.25 R4",
+      "file": "1x1.25 R4.stl",
+      "width": 1.25,
+      "row": "R4",
+      "bytes": 174684
+    },
+    {
+      "id": "builtin:cherry-mx/1x1.5 R4",
+      "name": "1x1.5 R4",
+      "file": "1x1.5 R4.stl",
+      "width": 1.5,
+      "row": "R4",
+      "bytes": 177084
+    },
+    {
+      "id": "builtin:cherry-mx/1x1.75 R4",
+      "name": "1x1.75 R4",
+      "file": "1x1.75 R4.stl",
+      "width": 1.75,
+      "row": "R4",
+      "bytes": 182784
+    },
+    {
+      "id": "builtin:cherry-mx/1x2 R4",
+      "name": "1x2 R4",
+      "file": "1x2 R4.stl",
+      "width": 2,
+      "row": "R4",
+      "bytes": 221784
+    },
+    {
+      "id": "builtin:cherry-mx/1x2.25 R4",
+      "name": "1x2.25 R4",
+      "file": "1x2.25 R4.stl",
+      "width": 2.25,
+      "row": "R4",
+      "bytes": 230384
+    },
+    {
+      "id": "builtin:cherry-mx/1x2.5 R4",
+      "name": "1x2.5 R4",
+      "file": "1x2.5 R4.stl",
+      "width": 2.5,
+      "row": "R4",
+      "bytes": 213284
+    },
+    {
+      "id": "builtin:cherry-mx/1x2.75 R4",
+      "name": "1x2.75 R4",
+      "file": "1x2.75 R4.stl",
+      "width": 2.75,
+      "row": "R4",
+      "bytes": 217084
+    },
+    {
+      "id": "builtin:cherry-mx/1x6.25 R4",
+      "name": "1x6.25 R4",
+      "file": "1x6.25 R4.stl",
+      "width": 6.25,
+      "row": "R4",
+      "bytes": 311184
+    }
+  ]
+}
